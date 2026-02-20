@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 
 const Navbar = memo(function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const navRef = useRef(null);
 
     useLayoutEffect(() => {
@@ -30,33 +31,36 @@ const Navbar = memo(function Navbar() {
             {/* Logo Section */}
             <div className="nav-item flex items-center gap-2">
                 <div className="relative group cursor-pointer">
-                    <span className="text-4xl font-serif text-purple-400 font-bold tracking-tighter hover:text-purple-300 transition-colors">N</span>
+                    <img src="/N.webp" alt="Neuronic Logo" className="w-10 h-10 object-contain hover:opacity-80 transition-opacity" />
                 </div>
-                <div className="flex flex-col">
-                    <span className="text-xl font-bold tracking-widest text-white">
+                <div className="flex flex-col group/brand" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    <span className="text-xl font-medium tracking-widest text-white transition-all duration-300 group-hover/brand:scale-105 group-hover/brand:text-transparent group-hover/brand:bg-clip-text group-hover/brand:bg-gradient-to-r group-hover/brand:from-blue-400 group-hover/brand:to-purple-400 origin-left">
                         NEURONIC
                     </span>
-                    <span className="text-[0.6rem] text-gray-400 tracking-[0.2em] uppercase">
+                    <span className="text-[0.6rem] text-gray-400 tracking-[0.2em] uppercase transition-colors duration-300 group-hover/brand:text-gray-300" style={{ fontFamily: "ui-sans-serif, system-ui, sans-serif" }}>
                         Tech Today, Tomorrow, Together
                     </span>
                 </div>
             </div>
 
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* Navigation Links (Desktop) */}
+            <div className="hidden lg:flex items-center gap-8">
                 {['Services', 'Process', 'Case Studies', 'About', 'Contact'].map((item) => (
                     <a
                         key={item}
                         href={`#${item.toLowerCase().replace(' ', '-')}`}
-                        className="nav-item text-gray-300 hover:text-white text-sm font-medium transition-colors tracking-wide"
+                        className="nav-item group relative text-gray-300 hover:text-white text-sm font-medium transition-colors tracking-wide py-1"
                     >
                         {item}
+                        {/* Glowing Oval Underline Hover Effect */}
+                        <div className="absolute -bottom-1 left-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent group-hover:w-[120%] group-hover:-left-[10%] transition-all duration-300 ease-out z-10 rounded-full" />
+                        <div className="absolute -bottom-1 left-1/2 w-0 h-[3px] bg-gradient-to-r from-transparent via-purple-500 to-transparent group-hover:w-[120%] group-hover:-left-[10%] transition-all duration-300 ease-out blur-[4px] opacity-0 group-hover:opacity-100 z-0 rounded-full" />
                     </a>
                 ))}
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex items-center gap-4">
+            {/* Action Buttons (Desktop) */}
+            <div className="hidden lg:flex items-center gap-4">
                 <a href="#contact" className="nav-item px-6 py-2 rounded-full relative gradient-border-mask text-white text-sm font-medium hover:bg-white/10 transition-all">
                     Contact
                 </a>
@@ -64,6 +68,45 @@ const Navbar = memo(function Navbar() {
                     Get Started
                 </a>
             </div>
+
+            {/* Mobile Menu Toggle Button */}
+            <button
+                className="lg:hidden text-white p-2 focus:outline-none"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle mobile menu"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    {isMobileMenuOpen ? (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    ) : (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    )}
+                </svg>
+            </button>
+
+            {/* Mobile Menu Dropdown */}
+            {isMobileMenuOpen && (
+                <div className="absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 lg:hidden flex flex-col items-center py-6 gap-6 shadow-2xl">
+                    {['Services', 'Process', 'Case Studies', 'About', 'Contact'].map((item) => (
+                        <a
+                            key={item}
+                            href={`#${item.toLowerCase().replace(' ', '-')}`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="text-gray-300 hover:text-white text-base font-medium transition-colors tracking-wide"
+                        >
+                            {item}
+                        </a>
+                    ))}
+                    <div className="flex flex-col gap-4 w-full px-8 mt-2">
+                        <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full text-center px-6 py-3 rounded-xl relative gradient-border-mask text-white text-sm font-medium hover:bg-white/10 transition-all">
+                            Contact
+                        </a>
+                        <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="w-full text-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 });

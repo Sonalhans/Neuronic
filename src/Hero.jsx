@@ -36,10 +36,10 @@ const Hero = memo(function Hero() {
 
             {/* Content Container */}
             {/* Content Container */}
-            <div className="relative z-10 max-w-6xl mx-auto px-4 pt-24 pb-12 flex flex-col md:flex-row items-center h-screen justify-center">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20 flex flex-col md:flex-row items-center justify-center min-h-screen md:h-screen">
 
                 {/* Left Content */}
-                <div className="w-full md:w-1/2 text-left mb-12 md:mb-0">
+                <div className="w-full md:w-1/2 text-left flex flex-col items-center md:items-start text-center md:text-left relative z-10">
                     {/* Pill */}
                     <div className="hero-text-item inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 backdrop-blur-sm mb-6">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -47,56 +47,56 @@ const Hero = memo(function Hero() {
                     </div>
 
                     {/* Headline */}
-                    <h1 className="hero-text-item text-4xl md:text-6xl font-bold leading-tight mb-4 tracking-tight">
-                        Transform Your <br />
+                    <h1 className="hero-text-item text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 tracking-tight">
+                        Transform Your <br className="hidden sm:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">
                             Digital Future
-                        </span> <br />
+                        </span> <br className="hidden sm:block" />
                         With AI & Blockchain
                     </h1>
 
                     {/* Description */}
-                    <p className="hero-text-item text-base md:text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+                    <p className="hero-text-item text-base md:text-lg text-slate-400 mb-10 max-w-xl leading-relaxed">
                         We engineer cutting-edge solutions that bridge innovation and business reality.
                         From intelligent automation to decentralized systems, we build the technology
                         that drives tomorrow's enterprises.
                     </p>
 
                     {/* Buttons */}
-                    <div className="hero-text-item flex flex-col sm:flex-row gap-4 mb-10">
-                        <button className="group relative px-8 py-4 bg-blue-600 rounded-full font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all hover:-translate-y-1 overflow-hidden">
+                    <div className="hero-text-item flex flex-col sm:flex-row gap-4 mb-12 w-full sm:w-auto">
+                        <a href="#contact" className="group relative px-8 py-4 bg-blue-600 rounded-full font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all hover:-translate-y-1 overflow-hidden w-full sm:w-auto flex items-center justify-center inline-block text-center">
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-100 transition-opacity" />
                             <span className="relative flex items-center gap-2">
                                 Start Your Project
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                             </span>
-                        </button>
+                        </a>
 
-                        <button className="group px-8 py-4 rounded-full font-semibold text-white border border-slate-600 hover:bg-slate-800/50 transition-all hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-2">
+                        <button className="group px-8 py-4 rounded-full font-semibold text-white border border-slate-600 hover:bg-slate-800/50 transition-all hover:-translate-y-1 backdrop-blur-sm flex items-center justify-center gap-2 w-full sm:w-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-400 group-hover:text-white transition-colors"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
                             View Our Work
                         </button>
                     </div>
 
                     {/* Stats */}
-                    <div className="hero-text-item grid grid-cols-3 gap-8 border-t border-slate-800 pt-6">
+                    <div className="hero-text-item grid grid-cols-3 gap-4 sm:gap-8 border-t border-slate-800 pt-8 w-full">
                         <div>
-                            <div className="text-2xl font-bold text-white mb-1">150+</div>
-                            <div className="text-xs text-slate-500 font-medium">Projects Delivered</div>
+                            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">150+</div>
+                            <div className="text-[10px] sm:text-xs text-slate-500 font-medium uppercase tracking-wider">Projects</div>
                         </div>
                         <div>
-                            <div className="text-2xl font-bold text-white mb-1">50+</div>
-                            <div className="text-xs text-slate-500 font-medium">Enterprise Clients</div>
+                            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">50+</div>
+                            <div className="text-[10px] sm:text-xs text-slate-500 font-medium uppercase tracking-wider">Clients</div>
                         </div>
                         <div>
-                            <div className="text-2xl font-bold text-white mb-1">99%</div>
-                            <div className="text-xs text-slate-500 font-medium">Client Satisfaction</div>
+                            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">99%</div>
+                            <div className="text-[10px] sm:text-xs text-slate-500 font-medium uppercase tracking-wider">Satisfaction</div>
                         </div>
                     </div>
                 </div>
 
                 {/* Right Visual (Globe/Network Representation) */}
-                <div className="hero-visual w-full md:w-1/2 h-[500px] relative mt-12 md:mt-0 flex items-center justify-center perspective-1000">
+                <div className="hero-visual absolute md:relative inset-0 md:inset-auto w-full md:w-1/2 h-full md:h-[500px] flex items-center justify-center perspective-1000 opacity-20 md:opacity-100 pointer-events-none md:pointer-events-auto z-0 md:z-10 overflow-hidden md:overflow-visible mix-blend-screen md:mix-blend-normal">
                     {/* Abstract Globe/Network Visual using CSS/SVG */}
                     <div className="relative w-80 h-80 md:w-96 md:h-96 animate-float-slow">
                         {/* Core Gradient Orb */}
@@ -128,26 +128,26 @@ const Hero = memo(function Hero() {
                         </svg>
 
                         {/* Floating Elements */}
-                        <div className="absolute top-1/4 -right-4 p-4 bg-slate-800/80 backdrop-blur-md rounded-xl border border-slate-700 shadow-2xl animate-float" style={{ animationDelay: '-2s' }}>
+                        <div className="hidden md:flex absolute top-0 sm:top-1/4 -right-4 sm:-right-8 p-3 sm:p-4 bg-slate-800/80 backdrop-blur-md rounded-xl border border-slate-700 shadow-2xl animate-float scale-75 sm:scale-100 origin-right" style={{ animationDelay: '-2s' }}>
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
                                 </div>
                                 <div>
-                                    <div className="text-xs text-slate-400">Global Reach</div>
-                                    <div className="text-sm font-bold text-white">24/7 Active</div>
+                                    <div className="text-[10px] sm:text-xs text-slate-400">Global Reach</div>
+                                    <div className="text-xs sm:text-sm font-bold text-white">24/7 Active</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="absolute bottom-1/4 -left-8 p-4 bg-slate-800/80 backdrop-blur-md rounded-xl border border-slate-700 shadow-2xl animate-float" style={{ animationDelay: '1.5s' }}>
+                        <div className="hidden md:flex absolute bottom-0 sm:bottom-1/4 -left-4 sm:-left-8 p-3 sm:p-4 bg-slate-800/80 backdrop-blur-md rounded-xl border border-slate-700 shadow-2xl animate-float scale-75 sm:scale-100 origin-left" style={{ animationDelay: '1.5s' }}>
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                                 </div>
                                 <div>
-                                    <div className="text-xs text-slate-400">System Status</div>
-                                    <div className="text-sm font-bold text-green-400">Optimal</div>
+                                    <div className="text-[10px] sm:text-xs text-slate-400">System Status</div>
+                                    <div className="text-xs sm:text-sm font-bold text-green-400">Optimal</div>
                                 </div>
                             </div>
                         </div>
