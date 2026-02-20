@@ -7,6 +7,7 @@ const Services = lazy(() => import('./Services'));
 const Process = lazy(() => import('./Process'));
 const AICapabilities = lazy(() => import('./AICapabilities'));
 const TechStack = lazy(() => import('./TechStack'));
+const Contact = lazy(() => import('./Contact'));
 
 const SectionFallback = () => (
   <div className="w-full py-32 bg-slate-950" aria-hidden="true" />
@@ -28,6 +29,9 @@ export default function App() {
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <TechStack />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <Contact />
       </Suspense>
     </>
   );

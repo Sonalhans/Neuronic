@@ -57,12 +57,12 @@ const Navbar = memo(function Navbar() {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-4">
-                <button className="nav-item px-6 py-2 rounded-full relative gradient-border-mask text-white text-sm font-medium hover:bg-white/10 transition-all">
+                <a href="#contact" className="nav-item px-6 py-2 rounded-full relative gradient-border-mask text-white text-sm font-medium hover:bg-white/10 transition-all">
                     Contact
-                </button>
-                <button className="nav-item px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-purple-500/25">
+                </a>
+                <a href="#contact" className="nav-item px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-purple-500/25">
                     Get Started
-                </button>
+                </a>
             </div>
         </nav>
     );

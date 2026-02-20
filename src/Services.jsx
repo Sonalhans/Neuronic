@@ -51,7 +51,7 @@ const Services = memo(function Services() {
             gsap.to('.service-card', {
                 opacity: 1,
                 y: 0,
-                duration: 1.5,
+                duration: 0.5,
                 stagger: 0.2,
                 scrollTrigger: {
                     trigger: sectionRef.current,
