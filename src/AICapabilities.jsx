@@ -47,7 +47,7 @@ const AICapabilities = memo(function AICapabilities() {
             gsap.to('.demo-card', {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 0.2,
                 stagger: 0.2,
                 scrollTrigger: {
                     trigger: sectionRef.current,

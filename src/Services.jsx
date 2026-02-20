@@ -39,7 +39,7 @@ const Services = memo(function Services() {
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 1.0,
+                    duration: 0.5,
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: 'top 80%',

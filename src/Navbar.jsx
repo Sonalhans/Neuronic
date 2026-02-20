@@ -44,7 +44,7 @@ const Navbar = memo(function Navbar() {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center gap-8">
-                {['Services', 'Process', 'About', 'Contact'].map((item) => (
+                {['Services', 'Process', 'Case Studies', 'About', 'Contact'].map((item) => (
                     <a
                         key={item}
                         href={`#${item.toLowerCase().replace(' ', '-')}`}
