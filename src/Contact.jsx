@@ -108,7 +108,7 @@ const Contact = memo(function Contact() {
         <section
             id="contact"
             ref={sectionRef}
-            className="relative py-32 bg-slate-950 overflow-hidden"
+            className="relative pt-32 bg-slate-950 overflow-hidden"
         >
             {/* Background glow */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
@@ -404,6 +404,35 @@ const Contact = memo(function Contact() {
                             </form>
                         )}
                     </div>
+                </div>
+            </div>
+
+            {/* Footer Strip */}
+            <div className="border-t border-slate-800/60 mt-24">
+                <div className="container mx-auto px-6 pt-8 pb-4 max-w-6xl flex flex-col gap-6 relative z-10">
+
+                    {/* Top Row: Copyright & Legal */}
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                        {/* Copyright */}
+                        <p className="text-slate-400 text-sm">
+                            2024 Neuronic. All rights reserved.
+                        </p>
+
+                        {/* Legal Links */}
+                        <div className="flex items-center gap-6">
+                            <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                            <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        </div>
+                    </div>
+
+                    {/* Bottom Row: Logo & Brand */}
+                    <div className="flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity pb-1">
+                        <img src="/N.webp" alt="Neuronic Logo" className="w-10 h-10 object-contain" />
+                        <span className="text-2xl font-medium tracking-[0.2em] text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+                            NEURONIC
+                        </span>
+                    </div>
+
                 </div>
             </div>
         </section>
